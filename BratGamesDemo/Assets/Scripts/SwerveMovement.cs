@@ -27,8 +27,13 @@ public class SwerveMovement : MonoBehaviour
             return;
         }
 
-        _maxPosX = ((_road.localScale.x / 2 - 0.5f));
-        _minPosX = ((_road.localScale.x / 2 - 0.5f));
+        CalculateEdges();
+    }
+
+    public void CalculateEdges()
+    {
+        _maxPosX = (_road.localScale.x / 2 - 0.5f) - (Convoy.Instance.RightGuards.Count > 0 ? 1f : 0f);
+        _minPosX = (0.5f - _road.localScale.x / 2) + (Convoy.Instance.LeftGuards.Count > 0 ? 1f : 0f);
     }
 
     private void Update()
@@ -36,7 +41,7 @@ public class SwerveMovement : MonoBehaviour
         float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
         swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
         transform.Translate(swerveAmount, 0f, 0f);
-        var clampedPosX = Mathf.Clamp(transform.position.x, -_minPosX, _maxPosX);
+        var clampedPosX = Mathf.Clamp(transform.position.x, _minPosX, _maxPosX);
         transform.position = new Vector3(clampedPosX, transform.position.y, transform.position.z);
     }
 }

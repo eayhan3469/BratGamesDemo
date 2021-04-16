@@ -219,32 +219,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1157969867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &956136504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956136503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &956136505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956136503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +326,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002282504}
+  - component: {fileID: 1002282506}
+  - component: {fileID: 1002282505}
+  - component: {fileID: 1002282507}
   m_Layer: 0
   m_Name: Convoy
   m_TagString: Untagged
@@ -380,6 +357,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002282505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002282503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swerveSpeed: 0.5
+  maxSwerveAmount: 1
+--- !u!114 &1002282506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002282503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1002282507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002282503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836afaf8369c7ef4cb6c26b9ec3a9776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftGuards:
+  - {fileID: 1196730130}
+  - {fileID: 1383761008}
+  RightGuards:
+  - {fileID: 956136503}
+  - {fileID: 4879608690954268060}
+  FrontGuards:
+  - {fileID: 1516857946}
+  - {fileID: 1735920017}
 --- !u!1 &1054184061
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,12 +507,12 @@ PrefabInstance:
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_Name
-      value: Jeep1
+      value: LeftJeep
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420209386912, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
@@ -563,12 +587,12 @@ PrefabInstance:
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_Name
-      value: Jeep4
+      value: RightJeep
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420209386912, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
@@ -734,32 +758,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1718939513}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1196730131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196730130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1196730132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196730130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!1001 &1232339309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,12 +768,12 @@ PrefabInstance:
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_Name
-      value: Jeep5
+      value: FrontJeep
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420209386912, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
@@ -939,64 +937,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1067216759}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1383761009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383761008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1383761010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383761008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!1 &1516857946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
     type: 3}
   m_PrefabInstance: {fileID: 1232339309}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1516857947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516857946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1516857948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516857946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!1001 &1718939513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1007,12 +953,12 @@ PrefabInstance:
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_Name
-      value: Jeep2
+      value: LeftJeep
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420209386912, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
@@ -1083,32 +1029,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2122956738}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1735920018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735920017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1735920019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735920017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!1001 &2122956738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,12 +1039,12 @@ PrefabInstance:
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_Name
-      value: Jeep3
+      value: FrontJeep
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420209386912, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
@@ -1199,12 +1119,12 @@ PrefabInstance:
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_Name
-      value: Jeep0
+      value: RightJeep
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420208892288, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8034821420209386912, guid: a800d72a8c54f0744be38964102eeef2,
         type: 3}
@@ -1275,70 +1195,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3185929235919062044}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4879608690954268061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4879608690954268060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4879608690954268065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4879608690954268060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!4 &6830085536166237037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3164770733100512243, guid: 341ede67f962d5049b561da5102cb8b7,
     type: 3}
   m_PrefabInstance: {fileID: 8440538094548738206}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6830085536166661965 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3164770733100740563, guid: 341ede67f962d5049b561da5102cb8b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8440538094548738206}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6830085536166661966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6830085536166661965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd105f8679b8a454d8284dc6ded6d710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6830085536166661968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6830085536166661965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844f3aeac1c82ad4aae1b44c3354b701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swerveSpeed: 0.5
-  maxSwerveAmount: 1
 --- !u!1001 &8440538094548738206
 PrefabInstance:
   m_ObjectHideFlags: 0
