@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwerveMovement : MonoBehaviour
 {
+    public static SwerveMovement Instance;
+
     private SwerveInputSystem _swerveInputSystem;
 
     [SerializeField]
@@ -17,6 +19,14 @@ public class SwerveMovement : MonoBehaviour
     private Transform _road;
 
     private void Awake()
+    {
+        if (Instance != null)
+            Debug.LogError("'SwerveMovement' must be one");
+        else
+            Instance = this;
+    }
+
+    private void Start()
     {
         _swerveInputSystem = GetComponent<SwerveInputSystem>();
         _road = GameObject.FindGameObjectWithTag("Road").transform;
