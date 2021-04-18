@@ -27,4 +27,9 @@ public class President : MonoBehaviour, IDamagable
         if (other.tag == "Finish")
             GameManager.Instance.HasGameOver = true;
     }
+
+    private void Update()
+    {
+        SwerveMovement.Instance.RotateBasedDirection(this.transform);
+    }
 }

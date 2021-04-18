@@ -44,7 +44,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(nextSpawnTime);
         if (GameManager.Instance.HasGameStart)
         {
             if (Time.timeSinceLevelLoad > nextSpawnTime)

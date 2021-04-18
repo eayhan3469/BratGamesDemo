@@ -63,9 +63,16 @@ public class SwerveMovement : MonoBehaviour
 
     public void RotateBasedDirection(Transform transform)
     {
+#if UNITY_EDITOR
         float currentDegrees = 0f;
-        currentDegrees = Mathf.Lerp(currentDegrees, rotationSpeed * -SwerveAmount, Time.deltaTime * 20f);
+        currentDegrees = Mathf.Lerp(currentDegrees, 3 * rotationSpeed * -SwerveAmount, Time.deltaTime * 20f);
         Mathf.Clamp(currentDegrees, -15f, 15f);
         transform.rotation = Quaternion.Euler(0f, -currentDegrees, 0f);
+#elif UNITY_ANDROID || UNITY_IOS
+        float currentDegrees = 0f;
+        currentDegrees = Mathf.Lerp(currentDegrees, rotationSpeed / 2 * -SwerveAmount, Time.deltaTime * 10f);
+        Mathf.Clamp(currentDegrees, -15f, 15f);
+        transform.rotation = Quaternion.Euler(0f, -currentDegrees, 0f);
+#endif
     }
 }
