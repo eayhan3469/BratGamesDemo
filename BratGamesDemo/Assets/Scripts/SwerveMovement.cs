@@ -14,6 +14,9 @@ public class SwerveMovement : MonoBehaviour
     [SerializeField]
     private float maxSwerveAmount = 1f;
 
+    [SerializeField]
+    private float rotationSpeed = 50f;
+
     private float _maxPosX;
     private float _minPosX;
     private Transform _road;
@@ -60,40 +63,9 @@ public class SwerveMovement : MonoBehaviour
 
     public void RotateBasedDirection(Transform transform)
     {
-        if (SwerveAmount < 0f)
-        {
-            float currentDegrees = 0f;
-            if (Vector3.Distance(transform.eulerAngles, new Vector3(0f, -10f, 0f)) > 0.01f)
-            {
-                currentDegrees = Mathf.Lerp(currentDegrees, -10f, Time.fixedDeltaTime * 20f);
-                transform.rotation = Quaternion.Euler(0f, currentDegrees, 0f);
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0f, -10f, 0f);
-            }
-        }
-        else if (SwerveAmount > 0f)
-        {
-            float currentDegrees = 0f;
-            if (Vector3.Distance(transform.eulerAngles, new Vector3(0f, 10f, 0f)) > 0.01f)
-            {
-                currentDegrees = Mathf.Lerp(currentDegrees, 10f, Time.fixedDeltaTime * 20f);
-                transform.rotation = Quaternion.Euler(0f, currentDegrees, 0f);
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0f, 10f, 0f);
-            }
-        }
-        else if(SwerveAmount > -0.1f && SwerveAmount < 0.1f)
-        {
-            float currentDegrees = 0f;
-            if (Vector3.Distance(transform.eulerAngles, Vector3.zero) > 0.01f)
-            {
-                currentDegrees = Mathf.Lerp(currentDegrees, 0f, Time.deltaTime);
-                transform.rotation = Quaternion.Euler(0f, currentDegrees, 0f);
-            }
-        }
+        float currentDegrees = 0f;
+        currentDegrees = Mathf.Lerp(currentDegrees, rotationSpeed * -SwerveAmount, Time.deltaTime * 20f);
+        Mathf.Clamp(currentDegrees, -15f, 15f);
+        transform.rotation = Quaternion.Euler(0f, -currentDegrees, 0f);
     }
 }

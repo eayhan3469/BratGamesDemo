@@ -44,9 +44,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(nextSpawnTime);
         if (GameManager.Instance.HasGameStart)
         {
-            if (Time.time > nextSpawnTime)
+            if (Time.timeSinceLevelLoad > nextSpawnTime)
             {
                 nextSpawnTime += Random.Range(spawnTimeMin, spawnTimeMax);
                 Spawn();
