@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour, IDamagable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<President>() != null || other.GetComponent<Guard>() != null || other.tag == "EndPoint")
+        if (other.GetComponent<President>() != null || other.GetComponent<Guard>() != null || other.tag == "End Point")
             Damage(1);
     }
 }

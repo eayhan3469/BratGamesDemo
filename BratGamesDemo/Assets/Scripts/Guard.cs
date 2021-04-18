@@ -39,4 +39,9 @@ public class Guard : MonoBehaviour, IDamagable
         if (other.GetComponent<Enemy>() != null)
             Damage(1);
     }
+
+    private void Update()
+    {
+        SwerveMovement.Instance.RotateBasedDirection(this.transform);
+    }
 }

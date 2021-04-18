@@ -17,6 +17,9 @@ public class SwerveMovement : MonoBehaviour
     private float _maxPosX;
     private float _minPosX;
     private Transform _road;
+    private float swerveAmount;
+
+    public float SwerveAmount { get { return swerveAmount; } }
 
     private void Awake()
     {
@@ -48,10 +51,49 @@ public class SwerveMovement : MonoBehaviour
 
     private void Update()
     {
-        float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
+        swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
         swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
         transform.Translate(swerveAmount, 0f, 0f);
         var clampedPosX = Mathf.Clamp(transform.position.x, _minPosX, _maxPosX);
         transform.position = new Vector3(clampedPosX, transform.position.y, transform.position.z);
+    }
+
+    public void RotateBasedDirection(Transform transform)
+    {
+        if (SwerveAmount < 0f)
+        {
+            float currentDegrees = 0f;
+            if (Vector3.Distance(transform.eulerAngles, new Vector3(0f, -10f, 0f)) > 0.01f)
+            {
+                currentDegrees = Mathf.Lerp(currentDegrees, -10f, Time.fixedDeltaTime * 20f);
+                transform.rotation = Quaternion.Euler(0f, currentDegrees, 0f);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0f, -10f, 0f);
+            }
+        }
+        else if (SwerveAmount > 0f)
+        {
+            float currentDegrees = 0f;
+            if (Vector3.Distance(transform.eulerAngles, new Vector3(0f, 10f, 0f)) > 0.01f)
+            {
+                currentDegrees = Mathf.Lerp(currentDegrees, 10f, Time.fixedDeltaTime * 20f);
+                transform.rotation = Quaternion.Euler(0f, currentDegrees, 0f);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0f, 10f, 0f);
+            }
+        }
+        else if(SwerveAmount > -0.1f && SwerveAmount < 0.1f)
+        {
+            float currentDegrees = 0f;
+            if (Vector3.Distance(transform.eulerAngles, Vector3.zero) > 0.01f)
+            {
+                currentDegrees = Mathf.Lerp(currentDegrees, 0f, Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0f, currentDegrees, 0f);
+            }
+        }
     }
 }
